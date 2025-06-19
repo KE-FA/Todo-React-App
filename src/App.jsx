@@ -25,6 +25,12 @@ function App() {
 
   function handleAddItem(e) {
     e.preventDefault();
+    
+    if (!title || !description){
+      alert("All Fields Required")
+      return;
+    }
+
     // console.log(title, description)
     const newItem = {
       title: title,
