@@ -1,7 +1,19 @@
 import { useState } from "react";
 import "./App.css";
 
-function Header() {
+function TodoList({ title, description }) {
+  return (
+    <div className="todo-list">
+      <p>{title}</p>
+      <p>{description}</p>
+    </div>
+  );
+}
+
+
+function App() {
+  // const [count, setCount] = useState(0)
+
   return (
     <div className="details">
       <div className="header">
@@ -28,13 +40,13 @@ function Header() {
           <button className="btn-add">Add</button>
         </form>
       </div>
+      <div>
+        <TodoList  title={"Hello World"} description={"The World is huge"}/>
+      </div>
     </div>
+    
   );
-}
-function App() {
-  // const [count, setCount] = useState(0)
 
-  return <Header />;
 }
 
 export default App;

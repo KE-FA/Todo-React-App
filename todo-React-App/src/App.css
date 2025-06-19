@@ -73,3 +73,13 @@ html {
   font-weight: 750;
   cursor: pointer;
 }
+
+.todo-list{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 2px solid red; */
+  margin-top: 2rem;
+  font-size: 1.5rem;
+
+}
