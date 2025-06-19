@@ -10,9 +10,34 @@ function TodoList({ title, description }) {
   );
 }
 
-
 function App() {
-  // const [count, setCount] = useState(0)
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [addedDetails, setDetails] = useState([]);
+
+  function handleTitleChange(e) {
+    setTitle(e.target.value);
+  }
+
+  function handleDescChange(e) {
+    setDescription(e.target.value);
+  }
+
+  function handleAddItem(e) {
+    e.preventDefault();
+    // console.log(title, description)
+    const newItem = {
+      title: title,
+      description: description,
+    };
+
+    setDetails(function(prev){
+      return [...prev, newItem]
+    })
+
+    setTitle("")
+    setDescription("")
+  }
 
   return (
     <div className="details">
@@ -27,6 +52,8 @@ function App() {
               type="text"
               placeholder="Type the title"
               className="title-input"
+              value={title}
+              onChange={handleTitleChange}
             ></input>
           </div>
           <div className="description">
@@ -35,18 +62,26 @@ function App() {
               type="text"
               placeholder="Type the description"
               className="desc-input"
+              value={description}
+              onChange={handleDescChange}
             ></input>
           </div>
-          <button className="btn-add">Add</button>
+          <button className="btn-add" onClick={handleAddItem}>
+            Add
+          </button>
         </form>
       </div>
       <div>
-        <TodoList  title={"Hello World"} description={"The World is huge"}/>
+        {addedDetails.map((item, index) => (
+          <TodoList
+            key={index}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
       </div>
     </div>
-    
   );
-
 }
 
 export default App;
