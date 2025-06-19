@@ -8,14 +8,25 @@ function Header() {
         <h1 className="the-header">Todo List</h1>
       </div>
       <div className="inputs">
-        <div className="title">
-          <h2 className="the-title">Title:</h2>
-          <input type="text" placeholder="Type the title" className="title-input"></input>
-        </div>
-        <div className="description">
-          <h2 className="the-description">Description:</h2>
-          <input type="text" placeholder="Type the description" className="desc-input"></input>
-        </div>
+        <form className="form-input">
+          <div className="title">
+            <label className="the-title">Title:</label>
+            <input
+              type="text"
+              placeholder="Type the title"
+              className="title-input"
+            ></input>
+          </div>
+          <div className="description">
+            <label className="the-description">Description:</label>
+            <input
+              type="text"
+              placeholder="Type the description"
+              className="desc-input"
+            ></input>
+          </div>
+          <button className="btn-add">Add</button>
+        </form>
       </div>
     </div>
   );
