@@ -67,4 +67,8 @@ html {
 .btn-add{
   padding: .5rem 1rem;
   width:8rem;
+  border-radius: 8px;
+  color: blue;
+  background-color: wheat;
+  font-weight: 750;
 }
